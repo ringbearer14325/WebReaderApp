@@ -14,8 +14,9 @@ import Dashboard from './components/dashboard.js';
  
 
 function App() {
-    return (  
-          <Router>
+    return (
+      <Router>
+      <Auth0Provider>
             <div className="container">    
               <nav className="navbar navbar-expand-lg navheader">    
                 <div className="collapse navbar-collapse" >    
@@ -37,7 +38,8 @@ function App() {
               <Switch>  
               <Route path='/dashboard' component={Dashboard} />
             </Switch>
-        </Router>
+      </Auth0Provider>
+      </Router>
     )
 }
 

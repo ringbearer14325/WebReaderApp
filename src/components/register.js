@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -38,7 +39,7 @@ class Register extends React.Component() {
     if (Result.Status == 'Success')
     this.props.history.push("/Dashboard");
     else 
-    alerts('Sorrryyy !!! un-autheticated user');
+    //alerts('Sorrryyy !!! un-autheticated user');
 })
     }
 
