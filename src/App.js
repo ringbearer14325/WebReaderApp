@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import './css/App.css';
 import {
   Route,
@@ -9,6 +9,7 @@ import {
 import Login from './components/login.js'; 
 import Register from './components/register.js';  
 import Dashboard from './components/dashboard.js';  
+import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
 
  
@@ -16,7 +17,7 @@ import Dashboard from './components/dashboard.js';
 function App() {
     return (
       <Router>
-      <Auth0Provider>
+      <Auth0ProviderWithHistory>
             <div className="container">    
               <nav className="navbar navbar-expand-lg navheader">    
                 <div className="collapse navbar-collapse" >    
@@ -38,7 +39,7 @@ function App() {
               <Switch>  
               <Route path='/dashboard' component={Dashboard} />
             </Switch>
-      </Auth0Provider>
+      </Auth0ProviderWithHistory>
       </Router>
     )
 }
