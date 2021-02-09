@@ -10,5 +10,22 @@ const Auth0ProviderWithHistory = ({ children }) => {
 
     const onRedirectCallback = (appState) => {
         history.push(appState?.returnto || window.location.pathname);
-    }
-}
+    };
+
+
+    return (
+        <Auth0Provider
+        domain={domain}
+        clientId={clientId}
+        redirectUri={window.location.origin}
+        inRedirectCallBack={onRedirectCallback}
+        >
+            {children}
+
+        </Auth0Provider>
+
+    );
+
+};
+
+export default Auth0ProviderWithHistory;
