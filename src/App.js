@@ -2,9 +2,7 @@ import React  from 'react';
 import './css/App.css';
 import {
   Route,
-  BrowserRouter as Router,
-  Switch,
-  Link
+  Switch
 } from 'react-router-dom';
 import Dashboard from './components/dashboard'; 
 import { NavBar, Loading } from "./components";
@@ -23,8 +21,9 @@ if (isLoading) {
 }
 
     return (
-      <Router>
-      <Auth0ProviderWithHistory>
+      <div id="app" className="d-flex flex-column h-100">
+        <NavBar />
+        <div className="conatiner flex-grow-1">
               <Switch> 
               <Route path="/" exact component={Home} />
               <Route path="/profile" component={Profile} />
@@ -33,10 +32,11 @@ if (isLoading) {
               <Switch>  
               <Route path='/dashboard' component={Dashboard} />
             </Switch>
-      </Auth0ProviderWithHistory>
-      </Router>
-    )
-}
+            </div>
+            <Footer />
+      </div>
+    );
+};
 
 
 
