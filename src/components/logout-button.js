@@ -1,0 +1,24 @@
+import React from "react";
+import { useAuth0 } from "@auth/0/auth0-react";
+
+
+const logoutButton = () => {
+    const { logout } = useAuth0();
+    return (
+        <button 
+        className="btn btn-primary btn-block"
+        onClick={() => 
+            logout({
+                returnTo: window.location.origin, 
+            })
+        }
+        >
+        Log Out
+        </button>
+    );
+    
+}; 
+
+
+
+export default logoutButton;
