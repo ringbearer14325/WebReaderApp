@@ -6,35 +6,29 @@ import {
   Switch,
   Link
 } from 'react-router-dom';
-import Login from './components/login.js'; 
-import Register from './components/register.js';  
-import Dashboard from './components/dashboard.js';  
+import Dashboard from './components/dashboard'; 
+import { NavBar, Loading } from "./components";
+import { Home, Profile, ExternalApi } from "./views"; 
 import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
+import { useAuth0 } from '@auth0/auth0-react';
 
 
- 
 
 function App() {
+const { isLoading } = useAuth0();
+
+if (isLoading) {
+  return <Loading />;
+
+}
+
     return (
       <Router>
       <Auth0ProviderWithHistory>
-            <div className="container">    
-              <nav className="navbar navbar-expand-lg navheader">    
-                <div className="collapse navbar-collapse" >    
-                  <ul className="navbar-nav mr-auto">    
-                    <li className="nav-item">    
-                      <Link to={'/login'} className="nav-link">Login</Link>    
-                    </li>    
-                    <li className="nav-item">    
-                      <Link to={'/register'} className="nav-link">Register</Link>    
-                    </li>    
-                  </ul>    
-                </div>    
-                </nav>
-              </div>
-              <Switch>    
-                <Route exact path='/login' component={Login} />    
-                <Route path='/register' component={Register} />    
+              <Switch> 
+              <Route path="/" exact component={Home} />
+              <Route path="/profile" component={Profile} />
+              <Route path="/external-api" component={ExternalApi} />                  
               </Switch>    
               <Switch>  
               <Route path='/dashboard' component={Dashboard} />
