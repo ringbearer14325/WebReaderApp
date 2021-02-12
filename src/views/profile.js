@@ -1,11 +1,11 @@
-import React, { Profiler } from "react";
+import React from "react";
 
 import { useAuth0 } from "@auth/auth0-reat";
 
 
 
 const profile = () => {
-    const { user } = userAuth0();
+    const { user } = useAuth0();
     const { name, picture, email } = user;
     
 

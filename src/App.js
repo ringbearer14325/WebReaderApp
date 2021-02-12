@@ -33,7 +33,6 @@ function App() {
               <Route path='/dashboard' component={Dashboard} />
             </Switch>
             </div>
-            <Footer />
       </div>
     );
 };

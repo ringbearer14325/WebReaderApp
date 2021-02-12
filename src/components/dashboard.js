@@ -6,7 +6,7 @@ import './css/dashboard.css';
 
 class Book extends React.Component {
     constructor() {
-        super(props);
+        super();
             this.state = { data: this.props.initialData },
             this.handleSubmit = this.handleSubmit.bind(this)
         };
@@ -47,6 +47,7 @@ class Book extends React.Component {
      render() {
          return (
              <div className="bookForm">
+                 <div>this is my book component</div>
                 <Book onBookSubmit={this.handleSubmit}></Book>
              </div>
 
@@ -60,7 +61,7 @@ class Book extends React.Component {
 
 class Course extends React.Component {
     constructor() {
-        super(props);
+        super();
         this.state = { data: this.props.initialData },
         this.handleSubmit = this.handleSubmit.bind(this)
     };
@@ -95,8 +96,7 @@ class Course extends React.Component {
                 <form>
                     <div>this is my Course component</div>
                     <div>
-                    courseName={this.props.courseName},
-                    garde={this.props.grade}   
+                    
                     <input type="text"></input>
                     <Book data={this.state.data}></Book>
                     <Book data={this.state.data}></Book>
@@ -132,8 +132,8 @@ class Dashboard extends React.Component {
     render() {
         return (            
             <div className="container">
-            <NavBar username={username} score={score}></NavBar>
-            <Course courseName={this.state.courseName}></Course>
+            <NavBar></NavBar>
+            <Course></Course>
             </div>
         )
         
