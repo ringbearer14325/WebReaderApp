@@ -16,11 +16,7 @@ namespace WebReaderApp.ClientApp.src.Data
 
         // books
         Task<Book[]> GetAllBooksAsync();
-        Task<Book> GetBookAsync(int bookId, string bookName, string content);
+        Task<Book> GetBook();
         
-        
-      
-
-
     }
 }

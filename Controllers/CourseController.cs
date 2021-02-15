@@ -24,7 +24,7 @@ namespace WebReaderApp.ClientApp.src.Controllers
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public IActionResult GetCourse(string course)
+        public IActionResult GetCourse()
         {
             //return new Course;
             return Ok(new { moniker = "Course" });

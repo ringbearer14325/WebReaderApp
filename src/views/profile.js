@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useAuth0, withAuthenticationRequired } from "@auth/auth0-reat";
-import { Loading } from "../components";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import { Loading } from "../components/Loading";
 
 
 
@@ -34,6 +34,6 @@ const profile = () => {
 };
 
 
-export default withAutheticationRequired(profile, {
-    onDirecting: () => <Loading />
-}
+export default withAuthenticationRequired(profile, {
+    onRedirecting: () => <Loading />
+});

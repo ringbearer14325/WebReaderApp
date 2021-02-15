@@ -23,9 +23,9 @@ class NavBar extends React.Component() {
                         <input type="textbox" value="search">search</input>
                     </form>
                 </div>
-            <p>{ username }</p>
-            <p>{ score }</p>
-            <p>{ age }</p>
+            <p>{  }</p>
+            <p>{  }</p>
+            <p>{ }</p>
             </div>
 
 

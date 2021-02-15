@@ -22,19 +22,13 @@ namespace ClientApp.src.Controllers
 
         //GET api/<ValuesController>/5
         [HttpGet]
-        public async Task<IActionResult> GetBook()
+        public IActionResult GetBook()
         {
-            try
-            {
-                var results = await _repository.GetAllBooksAsync();
 
-                return Ok(results);
-            }
-            catch (Exception)
-            {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
-            }
+            var results = _repository.GetBook();
 
+            return Ok(results);
+         
         }
 
 
